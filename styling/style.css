@@ -1,0 +1,180 @@
+@import url("https://fonts.googleapis.com/css2?family=Play:wght@400;700&family=VT323&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-family: "Play", sans-serif;
+  font-family: "VT323", monospace;
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  font-size: 10px;
+}
+
+/* Left Container Styling */
+
+div.left-container {
+  position: relative;
+  width: 45%;
+  height: 100%;
+}
+
+div.left-container video {
+  object-fit: cover;
+  object-position: 15%;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
+div.left-container img {
+  object-fit: cover;
+  object-position: 15%;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
+div.left-container .title {
+  position: relative;
+  bottom: 20px;
+  padding: 5px;
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+  padding: 20px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+div.left-container .title h1 {
+  text-align: center;
+  letter-spacing: 10px;
+  font-size: clamp(2rem, 8vw, 11rem);
+  color: rgba(255, 255, 255, 0.89);
+  text-transform: uppercase;
+}
+
+div.left-container .title p {
+  text-align: center;
+  letter-spacing: 10px;
+  line-height: 3rem;
+  font-size: 2rem;
+  color: rgba(255, 255, 255, 0.89);
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+
+div.left-container .title img {
+  opacity: 0.75;
+  width: 70px;
+}
+
+/* Right Container Styling */
+
+div.right-container {
+  width: 55%;
+  padding: 2rem;
+
+  background-color: hsla(227, 92%, 35%, 0.9);
+  color: white;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 2.5rem;
+}
+
+div.right-container p {
+  font-size: 2rem;
+}
+
+div.right-container button {
+  font-family: "VT323", monospace;
+  font-size: 2rem;
+  width: 300px;
+  border: none;
+  padding: 14px;
+  background: hsla(227, 60%, 35%, 1);
+  color: hsl(0, 0%, 100%);
+  border-radius: 10px;
+  cursor: pointer;
+  margin-top: 25px;
+}
+
+div.right-container button:hover {
+  background: hsla(227, 40%, 65%, 1);
+}
+
+div.right-container button:active {
+  color: hsla(227, 40%, 35%, 1);
+  background: white;
+}
+
+div.right-container form {
+  font-size: 1.4rem;
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+div.right-container form p {
+  text-align: left;
+  color: crimson;
+  margin-bottom: 10px;
+}
+
+div.right-container a {
+  text-decoration: none;
+  color: hsl(0, 0%, 100%);
+}
+
+div.right-container a:hover {
+  color: hsl(0, 3%, 25%);
+}
+
+div.right-container .parent-form {
+  display: flex;
+  gap: 35px;
+}
+
+div.right-container .form-control {
+  width: 400px;
+}
+
+div.right-container .form-control input {
+  width: 100%;
+  margin-top: 10px;
+  border: none;
+  border: 5px solid hsla(227, 72%, 60%, 1);
+  border-radius: 10px;
+  background-color: hsla(227, 72%, 40%, 0.1);
+  padding: 5px 10px;
+  font-family: "VT323", monospace;
+  font-size: 1.5rem;
+  color: white;
+}
+
+div.right-container .form-control input:focus {
+  outline: none;
+  /* border: 5px solid hsla(227, 72%, 80%, 0.6); */
+  background-color: hsla(0, 0%, 100%, 0.2);
+}
