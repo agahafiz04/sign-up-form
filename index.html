@@ -5,6 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./styling/style.css" />
     <script src="./script/script.js" defer></script>
+    <script
+      src="https://kit.fontawesome.com/a836538f8f.js"
+      crossorigin="anonymous"
+    ></script>
     <title>Sign-Up Form</title>
   </head>
   <body>
@@ -29,36 +33,44 @@
 
       <p>Sign up <em>now</em> to get started</p>
 
-      <form action="" method="post">
+      <form>
         <p>Do it at your own risk.</p>
         <div class="parent-form">
           <div class="form-control">
             <label for="first-name">First Name</label>
             <input type="text" name="first-name" id="first-name" required />
+            <span></span>
           </div>
           <div class="form-control">
             <label for="last-name">Last Name</label>
             <input type="text" name="last-name" id="last-name" required />
+            <span></span>
           </div>
         </div>
         <div class="parent-form">
           <div class="form-control">
             <label for="first-name">Email</label>
             <input type="email" name="email" id="email" required />
+            <span></span>
           </div>
           <div class="form-control">
             <label for="phone">Phone Number</label>
-            <input type="tel" name="phone" id="phone" required />
+            <input type="tel" name="phone" id="phone" />
+            <span></span>
           </div>
         </div>
         <div class="parent-form">
           <div class="form-control">
             <label for="user-pass">Password</label>
-            <input type="password" name="user-pass" id="user-pass" />
+            <input type="password" name="user-pass" id="user-pass" required />
+            <i id="password-icon" class="fa-solid fa-eye"></i>
+            <span></span>
           </div>
           <div class="form-control">
             <label for="confirm-pass">Confirm Password</label>
             <input type="password" name="confirm-pass" id="confirm-pass" />
+            <i id="password-icon" class="fa-solid fa-eye"></i>
+            <span></span>
           </div>
         </div>
         <button>Create Account</button>
