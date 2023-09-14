@@ -9,7 +9,7 @@
 html {
   font-family: "Play", sans-serif;
   font-family: "VT323", monospace;
-  font-size: 16px;
+  font-size: 20px;
 }
 
 body {
@@ -115,7 +115,7 @@ div.right-container button {
   color: hsl(0, 0%, 100%);
   border-radius: 10px;
   cursor: pointer;
-  margin-top: 25px;
+  margin-top: 50px;
 }
 
 div.right-container button:hover {
@@ -133,7 +133,7 @@ div.right-container form {
 
   display: flex;
   flex-direction: column;
-  gap: 15px;
+  gap: 20px;
 }
 
 div.right-container form p {
@@ -145,10 +145,15 @@ div.right-container form p {
 div.right-container a {
   text-decoration: none;
   color: hsl(0, 0%, 100%);
+  cursor: pointer;
 }
 
 div.right-container a:hover {
   color: hsl(0, 3%, 25%);
+}
+
+div.right-container a:active {
+  color: hsla(227, 72%, 60%, 1);
 }
 
 div.right-container .parent-form {
@@ -158,7 +163,7 @@ div.right-container .parent-form {
 
 div.right-container .form-control {
   position: relative;
-  width: 400px;
+  width: 500px;
 }
 
 div.right-container .form-control input {
@@ -167,7 +172,7 @@ div.right-container .form-control input {
   border: none;
   border: 5px solid hsla(227, 72%, 60%, 1);
   border-radius: 10px;
-  background-color: hsla(227, 72%, 40%, 0.1);
+  background-color: hsla(227, 72%, 30%, 1);
   padding: 5px 10px;
   font-family: "VT323", monospace;
   font-size: 1.5rem;
@@ -179,7 +184,10 @@ div.right-container .form-control input:focus {
   background-color: hsla(0, 0%, 100%, 0.2);
 }
 
-div.right-container .form-control input:required + span::before {
+div.right-container
+  .form-control
+  input:required:not([type="password"])
+  + span::before {
   content: "Required";
   font-size: 0.8rem;
   letter-spacing: 2px;
@@ -191,12 +199,285 @@ div.right-container .form-control input:required + span::before {
   padding: 5px;
 }
 
-div.right-container .form-control input[type="password"] + i {
+div.right-container
+  .form-control
+  input:invalid:not([type="password"])
+  + span::after {
+  content: "❌";
   position: absolute;
-  top: 42px;
+  top: 43px;
+  right: 13px;
+  color: red;
+}
+
+div.right-container
+  .form-control
+  input:valid:not([type="password"])
+  + span::after {
+  content: "✔";
+  position: absolute;
+  top: 43px;
+  right: 13px;
+  color: rgb(4, 245, 4);
+}
+
+div.right-container .form-control input[id="user-pass"] ~ i {
+  position: absolute;
+  top: 48px;
   right: 10px;
   cursor: pointer;
 
   transform: scale(0.8);
   opacity: 0.5;
+}
+
+div.right-container .form-control input[id="user-pass"] ~ span,
+div.right-container .form-control input[id="confirm-pass"] ~ span {
+  position: absolute;
+  top: 95px;
+  left: 5px;
+  font-size: 0.9rem;
+  color: white;
+  text-align: left;
+}
+
+div.right-container .form-control input[type="password"]:valid ~ span {
+  color: rgb(4, 245, 4);
+}
+
+div.right-container .form-control input[type="password"]:invalid ~ span {
+  color: red;
+}
+
+/* The media query of the query */
+@media only screen and (max-width: 1400px) {
+  body {
+    flex-direction: column;
+    height: 100vh;
+  }
+
+  html {
+    font-size: clamp(14px, 1vh, 19px);
+  }
+
+  div.left-container {
+    position: relative;
+    width: 100%;
+    height: 30%;
+  }
+
+  div.right-container {
+    width: 100%;
+    height: 70%;
+    width: 100%;
+    padding: 0rem 2rem;
+
+    background-color: hsla(227, 92%, 35%, 0.9);
+    color: white;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 1rem;
+  }
+
+  div.right-container :is(p, form p) {
+    text-align: center;
+    margin-top: 10px;
+  }
+
+  div.right-container button {
+    width: 100%;
+    margin-top: 70px;
+    padding: 9px;
+  }
+
+  div.right-container form {
+    font-size: 1.4rem;
+    width: 100%;
+    gap: 10px;
+  }
+
+  div.right-container form p {
+    margin-bottom: 5px;
+  }
+
+  div.right-container .parent-form {
+    gap: 10px;
+  }
+
+  div.right-container .form-control {
+    position: relative;
+    width: 100%;
+    font-size: 1.8rem;
+  }
+
+  div.right-container .form-control input {
+    width: 100%;
+    margin-top: 5px;
+    padding: 10px;
+    font-size: 1.8rem;
+  }
+
+  div.right-container .form-control label {
+    position: relative;
+    left: 5px;
+  }
+
+  div.right-container
+    .form-control
+    input:required:not([type="password"])
+    + span::before {
+    content: "Required";
+    font-size: 1.2rem;
+    letter-spacing: 2.5px;
+    text-align: center;
+    position: absolute;
+    top: 2px;
+    right: 7px;
+    padding: 2px;
+  }
+
+  div.right-container
+    .form-control
+    input:invalid:not([type="password"])
+    + span::after {
+    content: "❌";
+    position: absolute;
+    top: 45px;
+    right: 13px;
+    font-size: 2rem;
+  }
+
+  div.right-container
+    .form-control
+    input:valid:not([type="password"])
+    + span::after {
+    content: "✔";
+    position: absolute;
+    top: 39px;
+    right: 14px;
+    font-size: 2rem;
+  }
+
+  div.right-container .form-control input[id="user-pass"] ~ i {
+    position: absolute;
+    top: 52px;
+    right: 10px;
+    cursor: pointer;
+
+    transform: scale(0.8);
+    opacity: 0.5;
+  }
+
+  div.right-container .form-control input[id="user-pass"] ~ span,
+  div.right-container .form-control input[id="confirm-pass"] ~ span {
+    position: absolute;
+    top: 102px;
+    left: 5px;
+    font-size: 1.2rem;
+  }
+
+  @media only screen and (max-width: 600px) {
+    html {
+      font-size: clamp(8px, 0.9vh, 13px);
+    }
+
+    div.right-container :is(p, form p) {
+      text-align: center;
+      margin-top: 10px;
+    }
+
+    div.right-container button {
+      width: 100%;
+      margin-top: 25px;
+      padding: 9px;
+    }
+
+    div.right-container form {
+      font-size: 1.4rem;
+      width: 100%;
+      gap: 10px;
+    }
+
+    div.right-container form p {
+      margin-bottom: 5px;
+    }
+
+    div.right-container .parent-form {
+      gap: 10px;
+    }
+
+    div.right-container .form-control {
+      position: relative;
+      width: 100%;
+      font-size: 1.8rem;
+    }
+
+    div.right-container .form-control input {
+      width: 100%;
+      margin-top: 5px;
+      padding: 3px;
+      font-size: 1.8rem;
+    }
+
+    div.right-container .form-control label {
+      position: relative;
+      left: 5px;
+    }
+
+    div.right-container
+      .form-control
+      input:required:not([type="password"])
+      + span::before {
+      content: "Required";
+      font-size: 1.2rem;
+      letter-spacing: 2.5px;
+      text-align: center;
+      position: absolute;
+      top: 2px;
+      right: 7px;
+      padding: 2px;
+    }
+
+    div.right-container
+      .form-control
+      input:invalid:not([type="password"])
+      + span::after {
+      content: "❌";
+      position: absolute;
+      top: 27px;
+      right: 13px;
+      font-size: 2rem;
+    }
+
+    div.right-container
+      .form-control
+      input:valid:not([type="password"])
+      + span::after {
+      content: "✔";
+      position: absolute;
+      top: 26px;
+      right: 13px;
+      font-size: 2rem;
+    }
+
+    div.right-container .form-control input[id="user-pass"] ~ i {
+      position: absolute;
+      top: 29px;
+      right: 10px;
+      cursor: pointer;
+
+      transform: scale(0.8);
+      opacity: 0.5;
+    }
+
+    div.right-container .form-control input[id="user-pass"] ~ span,
+    div.right-container .form-control input[id="confirm-pass"] ~ span {
+      position: absolute;
+      top: 56px;
+      left: 5px;
+      font-size: 1.2rem;
+    }
+  }
 }

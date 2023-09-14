@@ -38,12 +38,26 @@
         <div class="parent-form">
           <div class="form-control">
             <label for="first-name">First Name</label>
-            <input type="text" name="first-name" id="first-name" required />
+            <input
+              type="text"
+              name="first-name"
+              id="first-name"
+              minlength="3"
+              maxlength="15"
+              required
+            />
             <span></span>
           </div>
           <div class="form-control">
             <label for="last-name">Last Name</label>
-            <input type="text" name="last-name" id="last-name" required />
+            <input
+              type="text"
+              name="last-name"
+              id="last-name"
+              minlength="3"
+              maxlength="15"
+              required
+            />
             <span></span>
           </div>
         </div>
@@ -55,28 +69,50 @@
           </div>
           <div class="form-control">
             <label for="phone">Phone Number</label>
-            <input type="tel" name="phone" id="phone" />
+            <input
+              type="tel"
+              name="phone"
+              id="phone"
+              minlength="9"
+              maxlength="15"
+              pattern="[0-9]+"
+            />
             <span></span>
           </div>
         </div>
         <div class="parent-form">
           <div class="form-control">
             <label for="user-pass">Password</label>
-            <input type="password" name="user-pass" id="user-pass" required />
+            <input
+              type="password"
+              name="user-pass"
+              id="user-pass"
+              pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$"
+              minlength="8"
+              maxlength="15"
+              required
+            />
+            <span class="pass-span"
+              >Minimum eight characters, at least one letter and one
+              numbers</span
+            >
             <i id="password-icon" class="fa-solid fa-eye"></i>
-            <span></span>
           </div>
           <div class="form-control">
             <label for="confirm-pass">Confirm Password</label>
-            <input type="password" name="confirm-pass" id="confirm-pass" />
-            <i id="password-icon" class="fa-solid fa-eye"></i>
-            <span></span>
+            <input
+              type="password"
+              name="confirm-pass"
+              id="confirm-pass"
+              required
+            />
+            <span class="confirm-span"></span>
           </div>
         </div>
-        <button>Create Account</button>
+        <button class="form-submit">Create Account</button>
       </form>
 
-      <p>Already have an account? <a href="">Log in</a></p>
+      <p>Already have an account? <a>Log in</a></p>
     </div>
   </body>
 </html>
