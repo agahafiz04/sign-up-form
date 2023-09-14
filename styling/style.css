@@ -15,6 +15,12 @@ a {
   font-size: 2rem;
 }
 
+html,
+body {
+  margin: 0;
+  overflow-y: hidden;
+}
+
 html {
   font-family: "Play", sans-serif;
   font-family: "VT323", monospace;
