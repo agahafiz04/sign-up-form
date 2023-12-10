@@ -19,8 +19,6 @@ for (const input of allInputEl) {
   input.addEventListener("input", function () {
     input.nextElementSibling.style.display = "unset";
 
-    console.log(input.value);
-
     if (input.value == "") {
       input.nextElementSibling.style.display = "none";
     }
