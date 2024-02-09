@@ -31,8 +31,8 @@ for (const passIcon of passIconEl) {
       userPassEl.setAttribute("type", "text");
       passIcon.setAttribute("class", "fa-solid fa-eye-slash");
     } else {
-      passIcon.setAttribute("class", "fa-solid fa-eye");
       userPassEl.setAttribute("type", "password");
+      passIcon.setAttribute("class", "fa-solid fa-eye");
     }
     //
   });

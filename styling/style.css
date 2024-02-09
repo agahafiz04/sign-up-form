@@ -25,6 +25,10 @@ body {
   display: flex;
 }
 
+.pass-span::after {
+  display: none;
+}
+
 /* Left Container Styling */
 
 div.left-container {
@@ -194,21 +198,6 @@ div.right-container .form-control input:focus {
 
 div.right-container
   .form-control
-  input:required:not([type="password"])
-  + span::before {
-  content: "Required";
-  font-size: 0.8rem;
-  letter-spacing: 2px;
-  text-align: center;
-  position: absolute;
-  top: 0px;
-  right: 9px;
-  background-color: hsla(227, 72%, 60%, 1);
-  padding: 5px;
-}
-
-div.right-container
-  .form-control
   input:invalid:not([type="password"])
   + span::after {
   content: "❌";
@@ -249,11 +238,11 @@ div.right-container .form-control input[id="confirm-pass"] ~ span {
   text-align: left;
 }
 
-div.right-container .form-control input[type="password"]:valid ~ span {
+div.right-container #user-pass:valid ~ span {
   color: rgb(4, 245, 4);
 }
 
-div.right-container .form-control input[type="password"]:invalid ~ span {
+div.right-container #user-pass:invalid ~ span {
   color: red;
 }
 
@@ -330,20 +319,6 @@ div.right-container .form-control input[type="password"]:invalid ~ span {
   div.right-container .form-control label {
     position: relative;
     left: 5px;
-  }
-
-  div.right-container
-    .form-control
-    input:required:not([type="password"])
-    + span::before {
-    content: "Required";
-    font-size: 1.2rem;
-    letter-spacing: 2.5px;
-    text-align: center;
-    position: absolute;
-    top: 2px;
-    right: 7px;
-    padding: 2px;
   }
 
   div.right-container
@@ -432,20 +407,6 @@ div.right-container .form-control input[type="password"]:invalid ~ span {
     div.right-container .form-control label {
       position: relative;
       left: 5px;
-    }
-
-    div.right-container
-      .form-control
-      input:required:not([type="password"])
-      + span::before {
-      content: "Required";
-      font-size: 1.2rem;
-      letter-spacing: 2.5px;
-      text-align: center;
-      position: absolute;
-      top: 2px;
-      right: 7px;
-      padding: 2px;
     }
 
     div.right-container
